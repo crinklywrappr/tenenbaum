@@ -28,7 +28,8 @@ Example Usage
   (:require [tenenbaum.core :refer :all])
   (:import java.util.Random))
 
-
+;; This organism starts at n and each generation
+;; it's children strive to reach 10.
 (defrecord TenOrg [n]
   EvolvingOrganism
   (meetsGoal [this] (== (:n this) 10))
@@ -41,18 +42,29 @@ Example Usage
           (cond (.nextBoolean (Random.)) (->TenOrg (inc' (:n this)))
                 :else (->TenOrg (dec' (:n this))))))
 
+;; Note the comparison function is a vector of vectors, where m & f
+;; are TenOrg's, and mf & ff are their respective fitnesses
 (defn cfn [[m mf] [f ff]]
   (cond (< (Math/abs (double mf)) (Math/abs (double ff))) -1
         :else 1))
 
 (defn initfn [] (->TenOrg (rand-int 8)))
 
-(evolve 15 200 initfn cfn)
+(evolve 15       ;; Population size 30, Thread-count 15
+        200      ;; No more than 200 generations
+        initfn   ;; Function to create a TenOrg
+        cfn)     ;; Function to compare TenOrgs
 ```
 
 ```clojure
 {:finished true, :generation 3, :alphas {2 #genetic.core.test.TenOrg{:n 12}, 1 #genetic.core.test.TenOrg{:n 11}, 0 #genetic.core.test.TenOrg{:n 7}}, :solution #genetic.core.test.TenOrg{:n 10}}
 ```
+
+## TODO
+
+- Add Type Hints
+- Add Benchmarking
+- Provide ExecutorService to core.async
 
 ## License
 
