@@ -21,8 +21,7 @@ Leiningen dependency:
 
 Typically you just need to implement the EvolvingOrganism protocol and call evolve.  Evolve takes your requested population size / 2, the maximum number of generations you want to evolve, and two functions.  A function to create your EvolvingOrganism, and a function to compare them.
 
-Example Usage
-
+Example Usage:
 ```clojure
 (ns tenenbaum.core.test
   (:require [tenenbaum.core :refer :all])
@@ -55,9 +54,9 @@ Example Usage
         initfn   ;; Function to create a TenOrg
         cfn)     ;; Function to compare TenOrgs
 ```
-
+Example output:
 ```clojure
-{:finished true, :generation 3, :alphas {2 #genetic.core.test.TenOrg{:n 12}, 1 #genetic.core.test.TenOrg{:n 11}, 0 #genetic.core.test.TenOrg{:n 7}}, :solution #genetic.core.test.TenOrg{:n 10}}
+{:finished true, :generation 3, :alphas {2 #tenenbaum.core.test.TenOrg{:n 12}, 1 #tenenbaum.core.test.TenOrg{:n 11}, 0 #tenenbaum.core.test.TenOrg{:n 7}}, :solution #tenenbaum.core.test.TenOrg{:n 10}}
 ```
 
 ## TODO
