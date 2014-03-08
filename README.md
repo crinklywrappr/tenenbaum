@@ -1,13 +1,13 @@
 # Tenenbaum
 
-<img src="https://github.com/doubleagent/tenenbaum/tenenbaum.jpg"
+<img src="https://raw.github.com/doubleagent/tenenbaum/master/tenenbaum.jpg"
  alt="Tenenbaum Portrait" title="The woman herself!" align="right"/>
 
 > That Tenenbaum ain't what you think. Florence Nightingale, huh? That'll all
 > come crashing down 'fore you can say 'canned tomatoes'. I've seen good bunco,
 > and I've seen great bunco. But, when you waltz through Rapture and World War
 > Two without even a scratch? You got more than leprechauns watching over you.
-> ―Frank Fontaine[src]
+> ―Frank Fontaine
 
 
 Tenenbaum is a library for performing a genetic algorithm with good
