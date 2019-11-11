@@ -1,3 +1,5 @@
+NOTICE: This project should not be used by anyone.  I was written to help the author understand core.async.
+
 # Tenenbaum
 
 <img src="https://raw.github.com/doubleagent/tenenbaum/master/tenenbaum.jpg"
